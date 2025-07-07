@@ -9,7 +9,7 @@ export function useAISingleShot() {
     setLoading(true);
     setSuggestion(null);
     try {
-      const response = await axios.post('http://localhost:3001/api/complete', { code });
+      const response = await axios.post('/api/complete', { code });
       setSuggestion(response.data.suggestion || null);
       return response.data.suggestion || '';
     } catch (e) {
