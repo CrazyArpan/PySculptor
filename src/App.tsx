@@ -141,7 +141,8 @@ function App() {
     if (!promptText.trim() || !editorRef.current || !monacoRef.current) return;
     setAIPromptLoading(true);
     try {
-      const res = await axios.post('/api/generate', { prompt: promptText });
+     const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+     const res = await axios.post(`${apiBase}/api/generate`, { prompt: promptText });
       const suggestion = res.data.suggestion;
       const editor = editorRef.current;
       const monaco = monacoRef.current;
