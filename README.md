@@ -1,69 +1,86 @@
-# React + TypeScript + Vite
+# PySculptor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, AI-powered online Python IDE built with React, Vite, Tailwind CSS, Monaco Editor, and Pyodide. Write, run, and manage Python code in your browser with real-time execution, Copilot-style AI code completion, and a beautiful, glassmorphic neon UI.
 
-Currently, two official plugins are available:
+## Features
+- Split view: Monaco Editor & real-time Python output (Pyodide)
+- Copilot-style AI code completion (Google Gemini backend)
+- Prompt-to-code AI modal for natural language code generation
+- File management: add, remove, rename, switch tabs
+- Download/upload files, session saving with localStorage
+- Theme switching: gradient dark, glassmorphism, neon
+- Keyboard shortcuts & animated transitions
+- Responsive, modern design with custom PySculptor branding
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo
+[PySculptor Live](https://your-demo-link.com/)
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CrazyArpan/PySculptor.git
+   cd PySculptor
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Running the Development Server
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Building for Production
+```bash
+npm run build
+# or
+yarn build
 ```
+
+### Preview Production Build
+```bash
+npm run preview
+# or
+yarn preview
+```
+
+## Project Structure
+```
+PySculptor/
+├── public/           # Static assets (icons, Pyodide, etc.)
+├── src/              # Source code
+│   ├── assets/       # Images, SVGs, etc.
+│   ├── components/   # Reusable React components
+│   ├── App.tsx       # Main app layout and logic
+│   ├── main.tsx      # App entry point
+│   └── ...           # Styles, utils, etc.
+├── index.html        # Main HTML file
+├── package.json      # Project metadata and scripts
+├── vite.config.ts    # Vite configuration
+└── tailwind.config.js # Tailwind CSS config
+```
+
+## Customization
+- Update branding, colors, and gradients in `tailwind.config.js` and `src/App.css`.
+- Add or modify components in `src/components/`.
+- Adjust editor settings and AI integration in `src/App.tsx`.
+- Replace icons and assets in `public/` and `src/assets/`.
+
+## License
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+Feel free to reach out if you have any questions or suggestions!

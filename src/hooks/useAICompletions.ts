@@ -26,7 +26,7 @@ export function useAICompletions() {
     // Debounced API call for completions
     const getSuggestion = debounceAsync(async (code: string) => {
       try {
-        const response = await axios.post('http://localhost:3001/api/complete', { code });
+        const response = await axios.post('/api/complete', { code });
         return response.data.suggestion || '';
       } catch {
         return '';
@@ -36,7 +36,7 @@ export function useAICompletions() {
     // Register an inline completions provider for Python
     // @ts-ignore: Monaco's inline API may not be in all type defs
     const provider = monaco.languages.registerInlineCompletionsProvider('python', {
-      async provideInlineCompletions(model, position, context, token) {
+      async provideInlineCompletions(model, position, ) {
         // Only show suggestion if cursor is at end of line
         const lineContent = model.getLineContent(position.lineNumber);
         if (position.column - 1 !== lineContent.length) {
