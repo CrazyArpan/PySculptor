@@ -9,7 +9,8 @@ export function useAISingleShot() {
     setLoading(true);
     setSuggestion(null);
     try {
-      const response = await axios.post('/api/complete', { code });
+      const apiBase = import.meta.env.VITE_API_BASE_URL || '';
+      const response = await axios.post(`${apiBase}/api/complete`, { code });
       setSuggestion(response.data.suggestion || null);
       return response.data.suggestion || '';
     } catch (e) {
