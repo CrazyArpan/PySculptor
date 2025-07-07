@@ -13,7 +13,7 @@ A modern, AI-powered online Python IDE built with React, Vite, Tailwind CSS, Mon
 - Responsive, modern design with custom PySculptor branding
 
 ## Demo
-[PySculptor Live](https://your-demo-link.com/)
+[PySculptor Live](https://pysculptor.netlify.app/)
 
 ## Getting Started
 
