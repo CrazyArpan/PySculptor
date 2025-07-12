@@ -345,7 +345,7 @@ function App() {
         </main>
       </div>
       <footer className="h-8 flex items-center justify-between px-4 bg-gradient-to-r from-[#7f5af0] via-[#5fbbff] to-[#2cb67d] text-white text-sm">
-        <div className="text-gray-400 text-sm">
+        <div className="text-white-400 text-sm">
           © 2025 PySculptor. All rights reserved.
         </div>
         <div>Ready</div>
